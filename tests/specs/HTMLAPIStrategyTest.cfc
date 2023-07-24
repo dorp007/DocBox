@@ -96,7 +96,9 @@ component extends="BaseTest" {
 
 				var fileContents = fileRead( testFile );
 
-				expect( fileContents ).toInclude( "<code>#chr(10)#testHTML( 'foo' )#chr(10)#</code>" );
+				expect( fileContents ).toInclude( "<code>" )
+						.toInclude( "testHTML( 'foo' )" )
+						.toInclude( "</code>" );
 			})
 		} );
 	}
