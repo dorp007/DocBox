@@ -1,7 +1,7 @@
 /**
  * Test the main DocBox model
  */
-component extends="testbox.system.BaseSpec" {
+component extends="BaseTest" {
 
 	variables.HTMLOutputDir = expandPath( "/tests/tmp/html" );
 	variables.JSONOutputDir = expandPath( "/tests/tmp/json" );
@@ -202,14 +202,6 @@ component extends="testbox.system.BaseSpec" {
 				}).notToThrow( "InvalidComponentException" );
 			});
 		} );
-	}
-
-	function resetTmpDirectory( directory ){
-		// empty the directory so we know if it has been populated
-		if ( directoryExists( arguments.directory ) ) {
-			directoryDelete( arguments.directory, true );
-		}
-		directoryCreate( arguments.directory );
 	}
 
 }
