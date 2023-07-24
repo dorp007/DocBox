@@ -199,6 +199,7 @@ component {
 		outputDir = ".tmp/apidocs"
 	){
 		ensureExportDir( argumentCollection = arguments );
+		directoryCreate( arguments.outputDir, true, true );
 
 		// Create project mapping
 		fileSystemUtil.createMapping( arguments.projectName, variables.cwd );
